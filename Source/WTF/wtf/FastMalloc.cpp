@@ -121,7 +121,9 @@ size_t fastMallocGoodSize(size_t bytes)
 #endif
 }
 
-#if OS(WINDOWS)
+// billming, move it to PORT folder
+//#if OS(WINDOWS)
+#if 0
 
 void* fastAlignedMalloc(size_t alignment, size_t size) 
 {
@@ -143,7 +145,7 @@ void fastAlignedFree(void* p)
     _aligned_free(p);
 }
 
-#else
+//#else
 
 void* fastAlignedMalloc(size_t alignment, size_t size) 
 {

@@ -72,7 +72,7 @@
     <ClCompile Include="..\..\Source\WTF\wtf\PORT\AlignedMalloc_win.cpp" />
     <ClCompile Include="..\..\Source\WTF\wtf\PORT\OSAllocatorWin.cpp" />
     <ClCompile Include="..\..\Source\WTF\wtf\PORT\RAMSize.cpp" />
-    <ClCompile Include="..\..\Source\WTF\wtf\PORT\RandomDevice_win.cpp" />
+    <ClCompile Include="..\..\Source\WTF\wtf\PORT\RandomDevice.cpp" />
     <ClCompile Include="..\..\Source\WTF\wtf\PORT\StackBounds_win.cpp" />
     <ClCompile Include="..\..\Source\WTF\wtf\PORT\TextBreakIteratorInternalICU_posix.cpp" />
     <ClCompile Include="..\..\Source\WTF\wtf\PORT\ThreadingPthreads.cpp" />

@@ -103,6 +103,7 @@ $(SOURCEDIR)/Source/WTF/wtf/MonotonicTime.cpp\
 $(SOURCEDIR)/Source/WTF/wtf/NumberOfCores.cpp\
 $(SOURCEDIR)/Source/WTF/wtf/OSAllocatorPosix.cpp\
 $(SOURCEDIR)/Source/WTF/wtf/OSRandomSource.cpp\
+$(SOURCEDIR)/Source/WTF/wtf/PORT/AlignedMalloc_posix.cpp\
 $(SOURCEDIR)/Source/WTF/wtf/PORT/RAMSize.cpp\
 $(SOURCEDIR)/Source/WTF/wtf/PORT/RandomDevice.cpp\
 $(SOURCEDIR)/Source/WTF/wtf/PORT/StackBounds_mac.cpp\
