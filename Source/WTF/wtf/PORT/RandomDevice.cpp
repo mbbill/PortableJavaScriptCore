@@ -24,11 +24,9 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include <stdlib.h>
 #include "config.h"
 #include "RandomDevice.h"
-
-#include <windows.h>
-#include <wincrypt.h> // windows.h must be included before wincrypt.h.
 
 namespace WTF {
 
@@ -38,22 +36,15 @@ RandomDevice::RandomDevice() {
 RandomDevice::~RandomDevice() {
 }
 
-// FIXME: Make this call fast by creating the pool in RandomDevice.
-// https://bugs.webkit.org/show_bug.cgi?id=170190
+// FIXME: The very weak random source is only used for ease of porting.
+// Make sure you implement it with a strong algorithm.
 void RandomDevice::cryptographicallyRandomValues(unsigned char* buffer, size_t length)
 {
-    // FIXME: We cannot ensure that Cryptographic Service Provider context and CryptGenRandom are safe across threads.
-    // If it is safe, we can acquire context per RandomDevice.
-    HCRYPTPROV hCryptProv = 0;
-    if (!CryptAcquireContext(&hCryptProv, 0, MS_DEF_PROV, PROV_RSA_FULL, CRYPT_VERIFYCONTEXT))
-        CRASH();
-    if (!CryptGenRandom(hCryptProv, length, buffer))
-        CRASH();
-    CryptReleaseContext(hCryptProv, 0);
+    for (int i = 0; i < length; i++)
+        buffer[i] = rand();
 }
 
 void initializeRandomNumberGenerator() {
-	// billming, empty for win.
 }
 
 }

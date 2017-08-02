@@ -119,7 +119,7 @@ typedef pthread_key_t ThreadSpecificKey;
 // billming
 // is this really safe? anyway, a type conversino is needed.
 //static const constexpr ThreadSpecificKey InvalidThreadSpecificKey = PTHREAD_KEYS_MAX;
-static const constexpr ThreadSpecificKey InvalidThreadSpecificKey = reinterpret_cast<ThreadSpecificKey>(PTHREAD_KEYS_MAX);
+static const constexpr ThreadSpecificKey InvalidThreadSpecificKey = static_cast<ThreadSpecificKey>(PTHREAD_KEYS_MAX);
 
 inline void threadSpecificKeyCreate(ThreadSpecificKey* key, void (*destructor)(void *))
 {

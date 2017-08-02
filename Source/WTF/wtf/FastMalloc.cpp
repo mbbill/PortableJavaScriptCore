@@ -143,9 +143,7 @@ void fastAlignedFree(void* p)
     _aligned_free(p);
 }
 
-// billming, implemented elsewhere.
-//#else
-#elif 0
+#else
 
 void* fastAlignedMalloc(size_t alignment, size_t size) 
 {
